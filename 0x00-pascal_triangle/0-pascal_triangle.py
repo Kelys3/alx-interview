@@ -25,4 +25,3 @@ def pascal_triangle(n):
         pascal_triangle[i] = new_row
 
     return pascal_triangle
-
