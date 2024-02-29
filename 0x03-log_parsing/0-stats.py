@@ -20,7 +20,7 @@ try:
         status_code = parts[5]
         file_size = int(parts[6])
 
-        # Update metrics
+        # Update metric
         total_size += file_size
         if status_code in status_counts:
             status_counts[status_code] += 1
@@ -31,7 +31,8 @@ try:
         # Check if it's time to print statistics
         if line_counter == 10:
             print("Total file size: File size:", total_size)
-            for code, count in sorted(status_counts.items(), key=lambda x: int(x[0])):
+            for code, count in sorted(status_counts.items(),
+                                      key=lambda x: int(x[0])):
                 if count > 0:
                     print(f"{code}: {count}")
             print()  # Add a newline for readability
@@ -51,4 +52,3 @@ finally:
     for code, count in sorted(status_counts.items(), key=lambda x: int(x[0])):
         if count > 0:
             print(f"{code}: {count}")
-
