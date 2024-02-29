@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''A script that reads stdin line by line and computes metrics'''
 
-
 import sys
 
 cache = {'200': 0, '301': 0, '400': 0, '401': 0,
@@ -35,4 +34,3 @@ finally:
     for key, value in sorted(cache.items()):
         if value != 0:
             print('{}: {}'.format(key, value))
-
